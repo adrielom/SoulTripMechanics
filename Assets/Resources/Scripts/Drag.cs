@@ -4,6 +4,7 @@ using System.Collections;
 [RequireComponent (typeof (BoxCollider2D))]
 
 public class Drag : MonoBehaviour {
+
     private Vector3 screenPoint;
     private Vector3 offset;
 
