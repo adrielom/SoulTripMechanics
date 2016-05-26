@@ -4,11 +4,11 @@ using System.Collections;
 public class MaterialsManager {
 
     //Properties
-    int numbOfMaterials { get; set; }
-    string name { get; set; }
-    float weight { get; set; }
-    float breakForce { get; set; }
-    float spiningSpeed { get; set; }
+    public int numbOfMaterials { get; set; }
+    public string name { get; set; }
+    public float weight { get; set; }
+    public float breakForce { get; set; }
+    public float spiningSpeed { get; set; }
 
     //Empty Constructor
     public MaterialsManager () {
@@ -23,11 +23,18 @@ public class MaterialsManager {
     }
 
     //Constructor 3
-    public MaterialsManager (string n, int nM) {
-        name = n;
+    public MaterialsManager (int nM) {
         numbOfMaterials = nM;
     }
 
+    //Constructor 4
+    public MaterialsManager (string n, float w, float bF, float sS, int nM) {
+        name = n;
+        weight = w;
+        breakForce = bF;
+        spiningSpeed = sS;
+        numbOfMaterials = nM;
+    }
 
     public MaterialsManager CombinationsMaterials (MaterialsManager m, MaterialsManager n) {
 
@@ -36,7 +43,8 @@ public class MaterialsManager {
         //New material's weight
         c.weight = CompareWeight (m.weight, n.weight);
 
-        
+        //New material's breakForce
+        c.breakForce = CompareBreakForce (m.breakForce, n.breakForce);
 
         return c;
 
