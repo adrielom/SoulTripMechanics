@@ -9,7 +9,6 @@ public class MaterialsManager {
     public float weight { get; set; }
     public float breakForce { get; set; }
     public float spiningSpeed { get; set; }
-    public float dragForce { get; set; }
 
     //Empty Constructor
     public MaterialsManager () {
@@ -29,13 +28,17 @@ public class MaterialsManager {
     }
 
     //Constructor 4
-    public MaterialsManager (string n, float w, float bF, float sS, int nM, float dF) {
+    public MaterialsManager (string n, float w, float bF, float sS, int nM) {
         name = n;
         weight = w;
         breakForce = bF;
         spiningSpeed = sS;
         numbOfMaterials = nM;
-        dragForce = dF;
+    }
+
+    //Constructor 5
+    public MaterialsManager (string n) {
+        name = n;
     }
 
     public MaterialsManager CombinationsMaterials (MaterialsManager m, MaterialsManager n) {
@@ -106,4 +109,6 @@ public class MaterialsManager {
 
         return c;
     }
+
+
 }
